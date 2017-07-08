@@ -13,9 +13,13 @@ dependencies {
     compile("org.thymeleaf:thymeleaf-spring4")
     compile("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect")
 
-    compile 'com.github.pengrad:java-telegram-bot-api:3.1.0'
+    //compile 'com.github.pengrad:java-telegram-bot-api:3.1.0'
+
+    compile 'com.google.api-client:google-api-client:1.22.0'
 
     compile 'org.apache.commons:commons-lang3:3.4'
+
+    compile 'org.telegram:telegrambots:2.4.4.5'
 
     compile 'org.slf4j:slf4j-api:1.7.5'
     compile 'joda-time:joda-time:2.2'
