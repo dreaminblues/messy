@@ -1,0 +1,40 @@
+apply plugin: 'groovy'
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.7'
+
+    compile 'org.springframework:spring-context:4.3.9.RELEASE'
+    compile("org.springframework.boot:spring-boot-starter-web:1.5.4.RELEASE")
+    compile("org.thymeleaf:thymeleaf-spring4")
+    compile("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect")
+
+    compile 'com.github.pengrad:java-telegram-bot-api:3.1.0'
+
+    compile 'org.apache.commons:commons-lang3:3.4'
+
+    compile 'org.slf4j:slf4j-api:1.7.5'
+    compile 'joda-time:joda-time:2.2'
+    testCompile 'junit:junit:4.11'
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'io.spring.gradle:dependency-management-plugin:1.0.0.RELEASE'
+    }
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+dependencyManagement {
+    imports {
+        mavenBom 'io.spring.platform:platform-bom:Brussels-SR3'
+    }
+}
