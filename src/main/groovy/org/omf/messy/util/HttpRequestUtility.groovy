@@ -8,7 +8,7 @@ import com.google.api.client.http.HttpRequestInitializer
 import com.google.api.client.http.javanet.NetHttpTransport
 import com.google.api.client.util.StringUtils
 
-final class HttpUtils {
+final class HttpRequestUtility {
 
     private static final HttpRequestFactory WEB_CLIENT
 
@@ -32,4 +32,5 @@ final class HttpUtils {
         return WEB_CLIENT.buildRequest(method, new GenericUrl(targetUrl),
                 new ByteArrayContent(null, StringUtils.getBytesUtf8(content)))
     }
+
 }
