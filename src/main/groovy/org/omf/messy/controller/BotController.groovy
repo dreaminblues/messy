@@ -1,32 +1,28 @@
 package org.omf.messy.controller
 
+import org.omf.messy.service.BotService
+import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RequestMethod
 import org.springframework.web.bind.annotation.RestController
 
-/**
- * Primary controller for the messy bot.
- */
+import javax.annotation.Resource
+
 @RestController
+@RequestMapping('/')
 class BotController {
 
-    private final static UPDATE_URL = ""
-    private final static USERNAME = ""
-    private final static PASSWORD = ""
+    @Resource(name = 'messyBotService')
+    private BotService botService
 
-    @RequestMapping(path = "/update", method = RequestMethod.GET)
-    String getUpdate() {
-
-
-        return "Test"
+    @GetMapping('/auth')
+    Object auth() {
+        botService.auth()
     }
 
-    @RequestMapping(path="/notify",method=RequestMethod.PUT)
-    String sendNotification(){
-
-
-        return "Test"
+    @PostMapping('/update')
+    Object update() {
+        botService.update()
     }
-
 
 }
